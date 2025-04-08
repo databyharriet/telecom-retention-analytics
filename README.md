@@ -7,6 +7,179 @@
 
 ---
 
+## Table of Contents
+1. [🚀 Project Overview](#-project-overview)
+2. [🎯 Objective](#-objective)
+3. [🧠 Skills Demonstrated](#-skills-demonstrated)
+4. [🛠️ Tools & Technologies](#-tools--technologies)
+5. [🧹 Data Cleaning Summary](#-data-cleaning-summary)
+6. [📊 Key DAX Measures](#-key-dax-measures)
+7. [📈 Dashboard Walkthrough](#-dashboard-walkthrough)
+   - [Page 1 – Executive Summary](#-page-1--executive-summary)
+   - [Page 2 – Demographics & Behavior](#-page-2--demographics--behavior)
+   - [Page 3 – High-Risk Customer Focus](#-page-3--high-risk-customer-focus)
+8. [🔍 Insights & Recommendations](#-insights--recommendations)
+9. [💡 What Should Change?](#-what-should-change)
+10. [📁 Project Files](#-project-files)
+11. [🙏 Acknowledgment](#-acknowledgment)
+12. [🔗 Let’s Connect!](#-lets-connect)
+
+---
+
+## 🚀 Project Overview
+
+This project simulates a real-world case study for **PhoneNow**, a telecom provider, focused on **customer churn analysis** and **retention strategy** using **Power BI**. The goal is to visualize patterns, identify high-risk customers, and support proactive retention decisions.
+
+This project was completed as part of a professional upskilling challenge provided by **PwC Switzerland** to help learners develop strong, real-world analytics capabilities. 🙌
+
+---
+
+## 🎯 Objective
+
+Customers are the heart of telecom businesses, and losing them can be costly. This dashboard was designed to:
+
+- Detect early signals of churn
+- Identify at-risk segments like short-tenure users or senior citizens
+- Reveal service and contract types most correlated with churn
+- Empower decision-makers with actionable visual insights
+
+---
+
+## 🧠 Skills Demonstrated
+
+✅ Power BI Dashboard Design  
+✅ Power Query – Data Cleaning  
+✅ DAX – KPI and Measure Calculation  
+✅ Analytical Storytelling  
+✅ Business-Driven Insights  
+
+---
+
+## 🛠️ Tools & Technologies
+
+- **Power BI Desktop**
+- **Power Query (ETL)**
+- **DAX (Data Analysis Expressions)**
+- **Excel** (for raw dataset)
+- **PDF** (for brief/project brief understanding)
+
+---
+
+## 🧹 Data Cleaning Summary
+
+Using Power Query, I:
+- Corrected data types and handled blanks
+- Removed duplicates
+- Created calculated columns: `ChurnFlag`, `RiskCategory`, `TenureGroup`
+- Formatted data for Power BI visuals
+
+---
+
+## 📊 Key DAX Measures
+
+```DAX
+TotalCustomers = DISTINCTCOUNT('01 Churn-Dataset'[CustomerID])
+
+ChurnRate = DIVIDE(SUM('01 Churn-Dataset'[Churn Flag]), COUNT('01 Churn-Dataset'[CustomerID])) * 100
+
+RevenueLoss = SUMX(
+    FILTER('01 Churn-Dataset', '01 Churn-Dataset'[Churn Flag] = 1),
+    '01 Churn-Dataset'[MonthlyCharges]
+)
+
+RetentionRate = 100 - [ChurnRate]
+
+HighRiskCustomers = 
+CALCULATE(
+    COUNTROWS('01 Churn-Dataset'),
+    '01 Churn-Dataset'[RiskCategory] = "High Risk"
+)
+
+5. [🧹 Data Cleaning Summary](#-data-cleaning-summary)
+6. [📊 Key DAX Measures](#-key-dax-measures)
+7. [📈 Dashboard Walkthrough](#-dashboard-walkthrough)
+   - [Page 1 – Executive Summary](#-page-1--executive-summary)
+   - [Page 2 – Demographics & Behavior](#-page-2--demographics--behavior)
+   - [Page 3 – High-Risk Customer Focus](#-page-3--high-risk-customer-focus)
+8. [🔍 Insights & Recommendations](#-insights--recommendations)
+9. [💡 What Should Change?](#-what-should-change)
+10. [📁 Project Files](#-project-files)
+11. [🙏 Acknowledgment](#-acknowledgment)
+12. [🔗 Let’s Connect!](#-lets-connect)
+
+---
+
+## 🚀 Project Overview
+
+This project simulates a real-world case study for **PhoneNow**, a telecom provider, focused on **customer churn analysis** and **retention strategy** using **Power BI**. The goal is to visualize patterns, identify high-risk customers, and support proactive retention decisions.
+
+This project was completed as part of a professional upskilling challenge provided by **PwC Switzerland** to help learners develop strong, real-world analytics capabilities. 🙌
+
+---
+
+## 🎯 Objective
+
+Customers are the heart of telecom businesses, and losing them can be costly. This dashboard was designed to:
+
+- Detect early signals of churn
+- Identify at-risk segments like short-tenure users or senior citizens
+- Reveal service and contract types most correlated with churn
+- Empower decision-makers with actionable visual insights
+
+---
+
+## 🧠 Skills Demonstrated
+
+✅ Power BI Dashboard Design  
+✅ Power Query – Data Cleaning  
+✅ DAX – KPI and Measure Calculation  
+✅ Analytical Storytelling  
+✅ Business-Driven Insights  
+
+---
+
+## 🛠️ Tools & Technologies
+
+- **Power BI Desktop**
+- **Power Query (ETL)**
+- **DAX (Data Analysis Expressions)**
+- **Excel** (for raw dataset)
+- **PDF** (for brief/project brief understanding)
+
+---
+
+## 🧹 Data Cleaning Summary
+
+Using Power Query, I:
+- Corrected data types and handled blanks
+- Removed duplicates
+- Created calculated columns: `ChurnFlag`, `RiskCategory`, `TenureGroup`
+- Formatted data for Power BI visuals
+
+---
+
+## 📊 Key DAX Measures
+
+```DAX
+TotalCustomers = DISTINCTCOUNT('01 Churn-Dataset'[CustomerID])
+
+ChurnRate = DIVIDE(SUM('01 Churn-Dataset'[Churn Flag]), COUNT('01 Churn-Dataset'[CustomerID])) * 100
+
+RevenueLoss = SUMX(
+    FILTER('01 Churn-Dataset', '01 Churn-Dataset'[Churn Flag] = 1),
+    '01 Churn-Dataset'[MonthlyCharges]
+)
+
+RetentionRate = 100 - [ChurnRate]
+
+HighRiskCustomers = 
+CALCULATE(
+    COUNTROWS('01 Churn-Dataset'),
+    '01 Churn-Dataset'[RiskCategory] = "High Risk"
+)
+)
+
+
 ## 🚀 Project Overview
 
 This project simulates a real-world case study for **PhoneNow**, a telecom provider, focused on **customer churn analysis** and **retention strategy** using **Power BI**. The goal is to visualize patterns, identify high-risk customers, and support proactive retention decisions.
